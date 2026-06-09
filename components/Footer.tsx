@@ -3,10 +3,10 @@ import Link from 'next/link'
 import type { SiteSettings } from '@/types'
 
 const PRACTICE_LINKS = [
-  { href: '/practice-areas/corporate-law', label: 'Corporate Law' },
-  { href: '/practice-areas/litigation', label: 'Litigation' },
+  { href: '/practice-areas/corporate-commercial', label: 'Corporate Law' },
+  { href: '/practice-areas/civil-litigation', label: 'Civil Litigation' },
   { href: '/practice-areas/real-estate', label: 'Real Estate' },
-  { href: '/practice-areas/employment-law', label: 'Employment Law' },
+  { href: '/practice-areas/employment-labour', label: 'Employment Law' },
 ]
 
 interface FooterProps {
