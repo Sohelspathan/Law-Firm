@@ -86,7 +86,7 @@ export default async function ResultsPage() {
                             {result.practiceArea.title}
                           </Link>
                         )}
-                        {result.year && (
+                        {result?.year != null && (
                           <span className="text-warm-600 text-xs">{result.year}</span>
                         )}
                       </div>
@@ -142,7 +142,7 @@ export default async function ResultsPage() {
                             {result.practiceArea.title}
                           </Link>
                         )}
-                        {result.year && (
+                        {result?.year != null && (
                           <span className="text-warm-600 text-xs">{result.year}</span>
                         )}
                       </div>
