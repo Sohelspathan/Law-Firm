@@ -18,7 +18,7 @@ import type {
 
 const SITE     = { next: { revalidate: 3600, tags: ['site-settings'] as string[]  } } as const
 const AREAS    = { next: { revalidate: 3600, tags: ['practice-areas'] as string[] } } as const
-const ATTORNEYS = { next: { revalidate: 3600, tags: ['attorneys']    as string[] } } as const
+const ATTORNEYS = { next: { revalidate: 0, tags: ['attorneys']    as string[] } } as const
 const RESULTS  = { next: { revalidate: 3600, tags: ['case-results'] as string[]  } } as const
 const POSTS    = { next: { revalidate: 3600, tags: ['posts']       as string[]   } } as const
 
