@@ -85,6 +85,7 @@ export interface CaseResult {
   outcome: string
   description: string
   featured: boolean
+  year?: string
   practiceArea?: PracticeAreaSummary
 }
 
