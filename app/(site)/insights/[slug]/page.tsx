@@ -9,7 +9,7 @@ import {
   getPostsSummary,
 } from '@/sanity/lib/queries'
 import { sanityImage } from '@/sanity/lib/image'
-import { PortableText } from '@/components/PortableText'
+import {PortableText} from '@/components/PortableText'
 import { PostCard } from '@/components/Cards'
 
 interface Props {
