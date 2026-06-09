@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ───────────────────────────────────────────────────── */
+:root {
+  --navy-950:   #07091A;
+  --navy-900:   #0B0F1F;
+  --navy-800:   #111527;
+  --navy-700:   #1A1F35;
+  --navy-600:   #252B47;
+  --navy-500:   #323A5C;
+  --gold-300:   #E2C97A;
+  --gold-400:   #D4B96A;
+  --gold-500:   #C9A55A;
+  --gold-600:   #B8943E;
+  --cream-50:   #FDFBF8;
+  --cream-100:  #F9F4EC;
+  --cream-200:  #F4EFE6;
+  --cream-300:  #EDE5D8;
+  --warm-400:   #9B98B0;
+  --warm-500:   #8B8FA8;
+  --warm-600:   #6B6F88;
+}
+
+/* ─── Base Resets ─────────────────────────────────────────────────────────────── */
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  ::selection {
+    background-color: var(--gold-500);
+    color: var(--navy-900);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy-800); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--navy-600);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold-600); }
+
+  /* Focus ring */
+  *:focus-visible {
+    outline: 2px solid var(--gold-400);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+/* ─── Typography ──────────────────────────────────────────────────────────────── */
+@layer components {
+  .heading-display {
+    @apply font-display font-light tracking-tight text-cream-200;
+    font-style: italic;
+  }
+
+  .heading-serif {
+    @apply font-display font-medium tracking-tight text-cream-200;
+  }
+
+  .text-gold-rule {
+    @apply text-gold-500 uppercase tracking-[0.2em] text-xs font-body font-medium;
+  }
+
+  /* Gold horizontal rule with label */
+  .section-label {
+    @apply flex items-center gap-4 text-gold-rule mb-6;
+  }
+  .section-label::before {
+    content: '';
+    @apply block w-8 h-px bg-gold-500 flex-shrink-0;
+  }
+}
+
+/* ─── Reusable Layout ─────────────────────────────────────────────────────────── */
+@layer components {
+  .container-site {
+    @apply max-w-7xl mx-auto px-6 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-24 lg:py-32;
+  }
+
+  /* Card surfaces */
+  .card-dark {
+    @apply bg-navy-800 border border-navy-600 rounded-sm;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .card-dark:hover {
+    @apply border-gold-600;
+    transform: translateY(-2px);
+  }
+
+  /* Gold divider line */
+  .gold-line {
+    @apply w-12 h-px bg-gold-500 my-6;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-gold-500 text-navy-900 
+           font-body font-medium text-sm uppercase tracking-[0.12em]
+           transition-all duration-200 hover:bg-gold-400 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-8 py-4 border border-gold-500 text-gold-400
+           font-body font-medium text-sm uppercase tracking-[0.12em]
+           transition-all duration-200 hover:bg-gold-500 hover:text-navy-900 active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-gold-400 font-body font-medium text-sm
+           uppercase tracking-[0.12em] transition-colors duration-200 hover:text-gold-300;
+  }
+}
+
+/* ─── Portable Text Styles ────────────────────────────────────────────────────── */
+@layer components {
+  .prose-law h2 {
+    @apply font-display text-3xl font-medium text-cream-200 mt-12 mb-4 tracking-tight;
+  }
+  .prose-law h3 {
+    @apply font-display text-2xl font-medium text-cream-200 mt-8 mb-3;
+  }
+  .prose-law h4 {
+    @apply font-body text-lg font-medium text-cream-100 mt-6 mb-2 uppercase tracking-wide;
+  }
+  .prose-law p {
+    @apply text-warm-400 leading-relaxed mb-5;
+  }
+  .prose-law strong {
+    @apply text-cream-200 font-medium;
+  }
+  .prose-law em {
+    @apply text-cream-300 italic;
+  }
+  .prose-law a {
+    @apply text-gold-400 underline underline-offset-4 hover:text-gold-300 transition-colors;
+  }
+  .prose-law ul {
+    @apply space-y-2 mb-5 ml-4;
+  }
+  .prose-law ul li {
+    @apply text-warm-400 leading-relaxed pl-4 relative;
+  }
+  .prose-law ul li::before {
+    content: '—';
+    @apply absolute left-0 text-gold-500;
+  }
+  .prose-law ol {
+    @apply space-y-2 mb-5 ml-4 list-decimal list-inside;
+  }
+  .prose-law ol li {
+    @apply text-warm-400 leading-relaxed;
+  }
+  .prose-law blockquote {
+    @apply border-l-2 border-gold-500 pl-6 ml-0 my-8;
+  }
+  .prose-law blockquote p {
+    @apply font-display text-xl italic text-cream-300 mb-0;
+  }
+  .prose-law figure {
+    @apply my-8;
+  }
+  .prose-law figure img {
+    @apply w-full rounded-sm;
+  }
+  .prose-law figure figcaption {
+    @apply text-warm-500 text-sm text-center mt-3;
+  }
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+
+  .opacity-0-start { opacity: 0; }
+}
+
+/* ─── Noise texture overlay for hero ─────────────────────────────────────────── */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 256px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+.noise-overlay > * { position: relative; z-index: 2; }
