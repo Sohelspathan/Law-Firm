@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  // console.log('HOME PAGE RENDERING...')
   const [settings, practiceAreas, attorneys, caseResults, posts] = await Promise.all([
     getSiteSettings(),
     getPracticeAreasSummary(),
@@ -24,11 +23,7 @@ export default async function HomePage() {
     getCaseResults(),
     getFeaturedPosts(),
   ])
-  // console.log('SETTINGS:', settings)
-  // console.log('PRACTICE AREAS:', practiceAreas)
-  // console.log('ATTORNEYS:', attorneys)
-  // console.log('CASE RESULTS:', caseResults)
-  // console.log('POSTS:', posts)
+
 
   const featuredResults = caseResults.filter((r) => r.featured).slice(0, 3)
   const featuredAttorneys = attorneys.slice(0, 3)

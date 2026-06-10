@@ -149,6 +149,3 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 export async function getFeaturedPosts(): Promise<PostSummary[]> {
   return client.fetch<PostSummary[]>(FEATURED_POSTS_QUERY, {}, POSTS)
 }
-
-// console.log(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID)
-// console.log(process.env.NEXT_PUBLIC_SANITY_DATASET)
