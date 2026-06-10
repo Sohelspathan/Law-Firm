@@ -32,7 +32,7 @@ export const metadata = {
     siteName: "MTQS Legal Services",
     images: [
       {
-        url: "/OGImage.png",
+        url: "/OG-Image.png",
         width: 1200,
         height: 630,
       },
