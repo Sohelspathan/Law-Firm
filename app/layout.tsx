@@ -21,6 +21,26 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
+// ─── OG tags ──────────────────────────────────────────────────────────
+export const metadata = {
+  title: "MTQS Legal Services",
+  description: "Experienced attorneys providing legal services.",
+  openGraph: {
+    title: "MTQS Legal Services",
+    description: "Experienced attorneys providing legal services.",
+    url: "https://mtqslegalservices.vercel.app",
+    siteName: "MTQS Legal Services",
+    images: [
+      {
+        url: "/OGImage.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+}
+
 // ─── Default Metadata ──────────────────────────────────────────────────────────
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
